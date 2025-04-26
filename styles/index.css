@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center; 
+    width: 100vw;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #111822, #333740);
+}
+
+.container {
+    max-width: 1000px;
+    width: 100%;
+}
+
+.todo-app {
+    max-width: 650px;
+    width: 100%;
+    min-height: 300px;
+    background-color: #fff;
+    margin-top: 100px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+}
+
+.todo-title {
+    color: #333740;
+    margin-bottom: 20px;
+    font-family: "poppins", sans-serif;
+    font-size: 40px;
+    text-align: center;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #c3bebbb1;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+
+input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+}
+
+input::placeholder {
+    color: #3f3e3e;
+}
+
+button {
+    border: none;
+    outline: none;
+    padding: 10px 40px;
+    background-color: #4F362A;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+    border-radius: 40px; 
+}
+
+
+
+ul li {
+    list-style: none;
+    font-family: "poppins", sans-serif;
+    color: #333740;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+
+ul li::before {
+    content: '';
+    position: absolute;
+    height: 22px;
+    width: 22px; 
+    border-radius: 50%;
+    background-image: url(../images/unchecked-br.svg);
+    background-size: cover;
+    background-position: center;
+    top: 9px;
+    left: 8px;
+}
+
+ul li.checked {
+    color: #555;
+    text-decoration: line-through;
+}
+
+ul li.checked::before {
+    background-image: url(../images/checked-br.svg);
+}
+
+ul li span {
+    position: absolute;
+    right: 0;
+    top: 3px;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%; 
+}
+
+ul li span:hover {
+    background: #c3bebbc1;
+}
+
+p {
+    text-align: center;
+    color: #fff;
+    font-family: "poppins", sans-serif;
+}
