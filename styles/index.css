@@ -3,17 +3,116 @@
     padding: 0;
 }
 
-body {
-    display: flex;
-    justify-content: center; 
-    width: 100vw;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #111822, #333740);
+:root {
+    --clr-body-bg: linear-gradient(135deg, #111822, #333740);
+    --clr-title: #333740;
+    --clr-input: #c3bebbb1;
+    --clr-button: #4F362A;
+    --clr-text: #333740;
+    --clr-hover: #c3bebbc1;
 }
 
+body {
+   max-width: 100vw;
+    min-height: 100vh;
+    background: var(--clr-body-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.color-picker-container {
+    width: 100vw;
+ display: flex;
+    justify-content: center;
+    position: absolute;
+}
+
+.color-picker > fieldset {
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: #fff;
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    padding: 20px;
+    border-radius: 0 0 10px 10px; 
+}
+
+.color-picker input[type="radio"] {
+    appearance: none;
+    width: 20px;
+    height: 20px; 
+    outline: 2px solid var(--radio-color, currentColor);
+    outline-offset: 3px;
+    border-radius: 50%;
+}
+
+.color-picker input[type="radio"]:checked {
+background-color: var(--radio-color, currentColor);
+}
+
+input[type="radio"]#blue {
+    --radio-color: #02457A;
+}
+
+input[type="radio"]#purple {
+    --radio-color: #8474A1;
+}
+
+input[type="radio"]#pink {
+    --radio-color: #f8a0c5;
+}
+
+input[type="radio"]#light {
+    --radio-color: grey;
+}
+
+
+:root:has(#blue:checked) {
+    --clr-body-bg: linear-gradient(135deg, #02457A, #018ABE);
+    --clr-title: #001B48;
+    --clr-input: #dde4e7;
+    --clr-button: #97CAD8;
+    --clr-text: #001B48;
+    --clr-hover: #dde4e7;
+}
+
+:root:has(#purple:checked) {
+    --clr-body-bg: linear-gradient(135deg, #8474A1, #ccABD8);
+    --clr-title: #4f416a;
+    --clr-input: #e4d7e8;
+    --clr-button: #bd93ca;
+    --clr-text: #4f416a;
+    --clr-hover: #e4d7e8;
+}
+
+:root:has(#pink:checked) {
+    --clr-body-bg: linear-gradient(135deg, #f8a0c5, #f0b7cf);
+    --clr-title: #e26398;
+    --clr-input: #f9e2eb;
+    --clr-button: #dc7ba3;
+    --clr-text: #e26398;
+    --clr-hover: #f9e2eb;
+}
+
+:root:has(#light:checked) {
+    --clr-body-bg: linear-gradient(135deg, #F1F7F7, #DDD3D3);
+    --clr-title: #b5b3b3;
+    --clr-input: #ebebeb;
+    --clr-button: #b8b0b0;
+    --clr-text: #b5b3b3;
+    --clr-hover: #ebebeb;
+}
+
+
+
 .container {
-    max-width: 1000px;
     width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .todo-app {
@@ -27,7 +126,7 @@ body {
 }
 
 .todo-title {
-    color: #333740;
+    color: var(--clr-title);
     margin-bottom: 20px;
     font-family: "poppins", sans-serif;
     font-size: 40px;
@@ -38,7 +137,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #c3bebbb1;
+    background-color: var(--clr-input);
     border-radius: 30px;
     padding-left: 20px;
     margin-bottom: 25px;
@@ -60,7 +159,7 @@ button {
     border: none;
     outline: none;
     padding: 10px 40px;
-    background-color: #4F362A;
+    background-color: var(--clr-button);
     color: #fff;
     font-size: 30px;
     cursor: pointer;
@@ -72,7 +171,7 @@ button {
 ul li {
     list-style: none;
     font-family: "poppins", sans-serif;
-    color: #333740;
+    color: var(--clr-text);
     font-size: 17px;
     padding: 12px 8px 12px 50px;
     user-select: none;
@@ -116,11 +215,24 @@ ul li span {
 }
 
 ul li span:hover {
-    background: #c3bebbc1;
+    background: var(--clr-hover);
 }
 
 p {
     text-align: center;
     color: #fff;
     font-family: "poppins", sans-serif;
+}
+
+
+/* Visually hidden by Kevin Powell */
+
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px; 
 }

@@ -1,5 +1,6 @@
 const inputBox = document.getElementById("input-box");
 const taskList = document.getElementById("task-list");
+const colorThemes = document.querySelectorAll('[name="theme"]');
 
 function addTask (){
     if (inputBox.value === '') {
@@ -28,6 +29,25 @@ taskList.addEventListener("click", function (e) {
     
 }, false);
 
+const storeTheme = function(theme) {
+    localStorage.setItem("theme", theme)
+};
+
+const retrieveTheme = function () {
+    const activeTheme = localStorage.getItem("theme");
+    colorThemes.forEach((themeOption) => {
+        if (themeOption.id === activeTheme) {
+            themeOption.checked = true;
+        }
+    })
+};
+
+colorThemes.forEach(themeOption => {
+    themeOption.addEventListener('click', () =>  {
+        storeTheme(themeOption.id);
+    });
+});
+
 
 function saveData () {
     localStorage.setItem("data", taskList.innerHTML); 
@@ -38,6 +58,7 @@ function showTask () {
 }
 
 showTask();
+document.onload = retrieveTheme();
 
 
 
