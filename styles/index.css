@@ -9,6 +9,7 @@
     --clr-title: #1f1f1f;
     --clr-input: #ddd8d6b1;
     --clr-button: #9c5b98;
+    --button-hover: #8a5087;
     --clr-text: #1f1f1f;
     --clr-hover: #ddd8d6b1; 
     --radio-color: #1f1f1f;
@@ -27,8 +28,14 @@ body {
 .color-picker-container {
     width: 100vw;
  display: flex;
+ flex-direction: column;
     justify-content: center;
     position: absolute;
+    background-color: #ffffff0d;
+    height: fit-content;
+    width: fit-content;
+    padding-top: 10px; 
+    border-radius: 0 0 10px 10px; 
 }
 
 .color-picker > fieldset {
@@ -36,12 +43,15 @@ body {
     display: flex;
     align-items: center;
     gap: 20px;
-    background: #fff;
     width: fit-content;
     height: fit-content;
     margin: auto;
     padding: 20px;
-    border-radius: 0 0 10px 10px; 
+    
+}
+
+.color-theme {
+    color: #cdcdcd;
 }
 
 .color-picker input[type="radio"] {
@@ -77,30 +87,33 @@ input[type="radio"]#light {
 :root:has(#blue:checked) {
     --clr-body-bg: linear-gradient(135deg, #001B48, #02457A);
     --clr-title: #001B48;
-    --clr-input: #dde4e7;
+    --clr-input: #d8e0e3a5;
     --clr-button: #E99E75;
+    --button-hover: #cf8b67;
     --clr-text: #001B48;
-    --clr-hover: #dde4e7;
+    --clr-hover: #d8e0e3a5;
     --check: invert(73%) sepia(41%) saturate(650%) hue-rotate(324deg) brightness(95%) contrast(92%);
 }
 
 :root:has(#purple:checked) {
     --clr-body-bg: linear-gradient(135deg, #776483, #BBAAB8);
     --clr-title: #4f416a;
-    --clr-input: #dfd9e2d1;
+    --clr-input: #dcd2e0d1;
     --clr-button: #08979D;
+    --button-hover: #068b90;
     --clr-text: #4f416a;
-    --clr-hover: #dfd9e2d1;
+    --clr-hover: #dcd2e0d1;
     --check: invert(45%) sepia(75%) saturate(532%) hue-rotate(134deg) brightness(90%) contrast(94%);
 }
 
 :root:has(#pink:checked) {
     --clr-body-bg: linear-gradient(135deg, #bf88a0, #c6adb8);
     --clr-title: #835769;
-    --clr-input: #f2e9ed;
+    --clr-input: #ecdae2ca;
     --clr-button: #abb188;
+    --button-hover: #9da37c;
     --clr-text: #835769;
-    --clr-hover: #f2e9ed;
+    --clr-hover: #ecdae2ca;
     --check: invert(77%) sepia(3%) saturate(2439%) hue-rotate(28deg) brightness(94%) contrast(78%);
 }
 
@@ -109,6 +122,7 @@ input[type="radio"]#light {
     --clr-title: #3d3d3d;
     --clr-input: #ebebeb;
     --clr-button: #5D6B6B;
+    --button-hover: #546060;
     --clr-text: #3d3d3d;
     --clr-hover: #ebebeb;
     --check: invert(40%) sepia(12%) saturate(357%) hue-rotate(131deg) brightness(96%) contrast(91%);
@@ -117,19 +131,25 @@ input[type="radio"]#light {
 
 
 .container {
+    margin: auto;
     width: 100%;
     display: flex;
     justify-content: center;
+    align-content: center;
+    
 }
 
 .todo-app {
     max-width: 650px;
     width: 100%;
     min-height: 300px;
-    background-color: #fff;
-    margin-top: 100px;
-    padding: 40px 30px 70px;
+    border: 1px solid #ffffff1d;
+    box-shadow: 0px 8px 32px #00000035;
+    background-color: #ffffffbe;
     border-radius: 10px;
+    backdrop-filter: blur(20px);
+    padding: 40px 30px 70px;
+    
 }
 
 .todo-title {
@@ -171,6 +191,10 @@ button {
     font-size: 30px;
     cursor: pointer;
     border-radius: 40px; 
+}
+
+button:hover {
+    background-color: var(--button-hover);
 }
 
 
