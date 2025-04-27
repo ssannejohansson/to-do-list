@@ -4,12 +4,15 @@
 }
 
 :root {
-    --clr-body-bg: linear-gradient(135deg, #111822, #333740);
-    --clr-title: #333740;
-    --clr-input: #c3bebbb1;
-    --clr-button: #4F362A;
-    --clr-text: #333740;
-    --clr-hover: #c3bebbc1;
+   
+    --clr-body-bg: linear-gradient(135deg, #1f1f1f, #3c3f44);
+    --clr-title: #1f1f1f;
+    --clr-input: #ddd8d6b1;
+    --clr-button: #9c5b98;
+    --clr-text: #1f1f1f;
+    --clr-hover: #ddd8d6b1; 
+    --radio-color: #1f1f1f;
+    --check: invert(39%) sepia(6%) saturate(4607%) hue-rotate(254deg) brightness(103%) contrast(77%);
 }
 
 body {
@@ -59,52 +62,56 @@ input[type="radio"]#blue {
 }
 
 input[type="radio"]#purple {
-    --radio-color: #8474A1;
+    --radio-color: #776483;
 }
 
 input[type="radio"]#pink {
-    --radio-color: #f8a0c5;
+    --radio-color: #bf88a0;
 }
 
 input[type="radio"]#light {
-    --radio-color: grey;
+    --radio-color: #b8b0b0;
 }
 
 
 :root:has(#blue:checked) {
-    --clr-body-bg: linear-gradient(135deg, #02457A, #018ABE);
+    --clr-body-bg: linear-gradient(135deg, #001B48, #02457A);
     --clr-title: #001B48;
     --clr-input: #dde4e7;
-    --clr-button: #97CAD8;
+    --clr-button: #E99E75;
     --clr-text: #001B48;
     --clr-hover: #dde4e7;
+    --check: invert(73%) sepia(41%) saturate(650%) hue-rotate(324deg) brightness(95%) contrast(92%);
 }
 
 :root:has(#purple:checked) {
-    --clr-body-bg: linear-gradient(135deg, #8474A1, #ccABD8);
+    --clr-body-bg: linear-gradient(135deg, #776483, #BBAAB8);
     --clr-title: #4f416a;
-    --clr-input: #e4d7e8;
-    --clr-button: #bd93ca;
+    --clr-input: #dfd9e2d1;
+    --clr-button: #08979D;
     --clr-text: #4f416a;
-    --clr-hover: #e4d7e8;
+    --clr-hover: #dfd9e2d1;
+    --check: invert(45%) sepia(75%) saturate(532%) hue-rotate(134deg) brightness(90%) contrast(94%);
 }
 
 :root:has(#pink:checked) {
-    --clr-body-bg: linear-gradient(135deg, #f8a0c5, #f0b7cf);
-    --clr-title: #e26398;
-    --clr-input: #f9e2eb;
-    --clr-button: #dc7ba3;
-    --clr-text: #e26398;
-    --clr-hover: #f9e2eb;
+    --clr-body-bg: linear-gradient(135deg, #bf88a0, #c6adb8);
+    --clr-title: #835769;
+    --clr-input: #f2e9ed;
+    --clr-button: #abb188;
+    --clr-text: #835769;
+    --clr-hover: #f2e9ed;
+    --check: invert(77%) sepia(3%) saturate(2439%) hue-rotate(28deg) brightness(94%) contrast(78%);
 }
 
 :root:has(#light:checked) {
     --clr-body-bg: linear-gradient(135deg, #F1F7F7, #DDD3D3);
-    --clr-title: #b5b3b3;
+    --clr-title: #3d3d3d;
     --clr-input: #ebebeb;
-    --clr-button: #b8b0b0;
-    --clr-text: #b5b3b3;
+    --clr-button: #5D6B6B;
+    --clr-text: #3d3d3d;
     --clr-hover: #ebebeb;
+    --check: invert(40%) sepia(12%) saturate(357%) hue-rotate(131deg) brightness(96%) contrast(91%);
 }
 
 
@@ -198,7 +205,10 @@ ul li.checked {
 }
 
 ul li.checked::before {
-    background-image: url(../images/checked-br.svg);
+    background-image: url(../images/checked.svg);
+    filter: var(--check);
+    
+    
 }
 
 ul li span {
