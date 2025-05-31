@@ -108,11 +108,11 @@ input[type="radio"]#light {
 
 :root:has(#pink:checked) {
     --clr-body-bg: linear-gradient(135deg, #bf88a0, #c6adb8);
-    --clr-title: #835769;
+    --clr-title: #593c48;
     --clr-input: #ecdae2ca;
     --clr-button: #abb188;
     --button-hover: #9da37c;
-    --clr-text: #835769;
+    --clr-text: #593c48;
     --clr-hover: #ecdae2ca;
     --check: invert(77%) sepia(3%) saturate(2439%) hue-rotate(28deg) brightness(94%) contrast(78%);
 }
